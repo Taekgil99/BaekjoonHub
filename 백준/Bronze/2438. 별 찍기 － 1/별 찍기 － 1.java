@@ -7,6 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int C = Integer.parseInt(br.readLine());
+        br.close();
 
         for (int i = 0; i < C; i++) {
             sb.append('*');
