@@ -6,11 +6,12 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int count = Integer.parseInt(br.readLine());
+        //for each에 getBytes()사용하면 N 필요없음.
+        int N = Integer.parseInt(br.readLine());
         int sum = 0;
-        String line = br.readLine();
-        for (int i = 0; i < count; i++) {
-            sum += Integer.parseInt(String.valueOf(line.charAt(i)));
+
+        for(byte e : br.readLine().getBytes()) {
+            sum += e - '0';
         }
         System.out.println(sum);
     }
