@@ -1,49 +1,38 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
+        int T = Integer.parseInt(br.readLine());
 
-        final int T = Integer.parseInt(reader.readLine());
-
-        ArrayList<Integer> result = new ArrayList<>();
-        String[] OX = new String[T];
-
-        int count = 0;
-        int sum = 0;
+        String[] arr = new String[T];
 
         for (int i = 0; i < T; i++) {
-            OX[i] = reader.readLine();
+            arr[i] = br.readLine();
         }
 
-        for (int i = 0; i < OX.length; i++) {
+        for (int i = 0; i < T; i++) {
 
-            String str = OX[i];
+            int count = 0;
+            int sum = 0;
 
-            for (int j = 0; j < str.length(); j++) {
+            for (int j = 0; j < arr[i].length(); j++) {
 
-                if (str.charAt(j) == 'O') {
+                if (arr[i].charAt(j) == 'O') {
                     count++;
-                    sum += count;
                 }
-                else if (str.charAt(j) == 'X') {
+                else {
                     count = 0;
                 }
+                sum += count;
             }
-            result.add(i, sum);
-            sum = 0;
-            count = 0;
+            sb.append(sum).append("\n");
         }
-        Iterator<Integer> it = result.iterator();
-
-        while (it.hasNext()) {
-            System.out.print(it.next() + "\n");
-        }
+        System.out.println(sb);
     }
 }
