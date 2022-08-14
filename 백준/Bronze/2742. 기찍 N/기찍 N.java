@@ -11,8 +11,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         for (int i = N; i > 0; i--) {
-            sb.append(N + "\n");
-            N--;
+            sb.append(i + "\n");
         }
         System.out.println(sb);
     }
