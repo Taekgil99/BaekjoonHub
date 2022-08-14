@@ -9,10 +9,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        ArrayList<String> list = new ArrayList<>();
-        while (st.hasMoreTokens()) {
-            list.add(st.nextToken());
-        }
-        System.out.println(list.size());
+        System.out.println(st.countTokens());
     }
 }
