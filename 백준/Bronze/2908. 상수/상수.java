@@ -8,18 +8,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        String firNum = st.nextToken();
-        String secNum = st.nextToken();
+        int num1 = Integer.parseInt(new StringBuffer(st.nextToken()).reverse().toString());
+        int num2 = Integer.parseInt(new StringBuffer(st.nextToken()).reverse().toString());
 
-        StringBuffer num1 = new StringBuffer(firNum);
-        StringBuffer num2 = new StringBuffer(secNum);
-        int revFir = Integer.parseInt(num1.reverse().toString());
-        int revSec = Integer.parseInt(num2.reverse().toString());
-
-        if (revFir > revSec) {
-            System.out.println(revFir);
-        } else  {
-            System.out.println(revSec);
-        }
+        System.out.print(num1 > num2 ? num1 : num2);
     }
 }
