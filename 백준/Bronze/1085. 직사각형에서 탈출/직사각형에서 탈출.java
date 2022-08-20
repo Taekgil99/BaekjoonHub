@@ -13,19 +13,10 @@ public class Main {
         int w = Integer.parseInt(st.nextToken());
         int h = Integer.parseInt(st.nextToken());
 
-        int result = x;
-
-        for (int i = 0; i < 4; i++) {
-            if (result > y) {
-                result = y;
-            } else if (result > w - x) {
-                result = w - x;
-            } else if (result > h - y) {
-                result = h - y;
-            }
-        }
-
-        System.out.println(result);
+        int xMin = Math.min(x, w - x);
+        int yMin = Math.min(y, h - y);
+        
+        System.out.println(Math.min(xMin, yMin));
         /*
         경계선에 갈 수 있는 경우의 수
         1. x = 0 까지의 거리
