@@ -7,7 +7,6 @@ import java.util.Comparator;
 public class Main {
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
     int N = Integer.parseInt(br.readLine());
 
     String[] arr = new String[N];
@@ -15,10 +14,10 @@ public class Main {
       arr[i] = br.readLine();
     }
     br.close();
-    //중복제거
-    String[] distinctArr = Arrays.stream(arr).distinct().toArray(String[]::new);
+//    //중복제거
+//    String[] distinctArr = Arrays.stream(arr).distinct().toArray(String[]::new);
     //정렬
-    Arrays.sort(distinctArr, new Comparator<String>() {
+    Arrays.sort(arr, new Comparator<String>() {
       public int compare(String s1, String s2) {
         //문자열의 길이가 같다면 사전순 정렬
         if (s1.length() == s2.length()) {
@@ -30,10 +29,14 @@ public class Main {
         }
       }
     });
+    StringBuilder sb = new StringBuilder();
 
-
-    for (String str : distinctArr) {
-      System.out.println(str);
+    sb.append(arr[0]).append('\n');
+    for (int i = 1; i < N; i++) {
+      if (!arr[i].equals(arr[i - 1])) {
+        sb.append(arr[i]).append('\n');
+      }
     }
+    System.out.println(sb);
   }
 }
