@@ -14,11 +14,11 @@ public class Main {
 
     int N = Integer.parseInt(br.readLine());
 
-    int answer = 1;
+    int answer = 666;
 
-    int count = 0;
+    int count = 1;
 
-    while (count < N) {
+    while (count != N) {
       answer++;
       String str = String.valueOf(answer);
       if (str.contains("666")) {
