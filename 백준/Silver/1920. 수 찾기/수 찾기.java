@@ -26,7 +26,7 @@ public class Main {
         st = new StringTokenizer(br.readLine());
 
         for (int i = 0; i < M; i++) {
-            if (binarySearch(Integer.parseInt(st.nextToken()))) {
+            if (Arrays.binarySearch(A, Integer.parseInt(st.nextToken())) >= 0) {
                 sb.append(1).append("\n");
             } else {
                 sb.append(0).append("\n");
@@ -35,23 +35,23 @@ public class Main {
 
         System.out.println(sb);
     }
-    public static boolean binarySearch(int key) {
-
-        int left = 0;
-        int right = A.length - 1;
-
-        while (left <= right) {
-            int mid = (left + right) / 2;
-
-            if (A[mid] == key) {
-                return true;
-            } else if (A[mid] > key) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
-        }
-
-        return false;
-    }
+//    public static boolean binarySearch(int key) {
+//
+//        int left = 0;
+//        int right = A.length - 1;
+//
+//        while (left <= right) {
+//            int mid = (left + right) / 2;
+//
+//            if (A[mid] == key) {
+//                return true;
+//            } else if (A[mid] > key) {
+//                right = mid - 1;
+//            } else {
+//                left = mid + 1;
+//            }
+//        }
+//
+//        return false;
+//    }
 }
